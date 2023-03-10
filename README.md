@@ -12,3 +12,35 @@
 ### 이렇게 정렬을 1회전 수행할 때마다 정렬에서 제외되는 데이터가 하나씩 늘어난다.
 
 # 버블 정렬(bubble sort) c언어 코드
+
+void bubbleSort(int* arr){
+    int i,j, temp;
+    for(i=0; i < LEN; i++){
+        for(j=0; j<LEN-i-1; j++){
+            if(arr[j] > arr[j+1]){    // swap
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+ 
+int main(){
+    int arr[LEN] = {7,5,1,4,3};
+    int i;
+    printf("정렬 전 : ");
+    for(i=0; i<5; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    
+    bubbleSort(arr);
+    printf("정렬 후 : ");
+    for(i=0; i<5; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\n");    
+    
+    return 0; 
+}
